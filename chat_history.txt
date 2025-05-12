@@ -1,0 +1,6 @@
+HumanMessage(
+    content="I want to request a refund for my recent purchase. Can you help me with that?",
+),
+AIMessage(
+    content="Of course! I can help you with that. Could you please provide me with your order number and the reason for the refund request?",
+),
