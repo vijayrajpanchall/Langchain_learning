@@ -2,3 +2,5 @@
 /venv
 /cache
 /.vscode
+/Files
+/chroma_db
