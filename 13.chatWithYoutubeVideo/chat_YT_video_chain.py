@@ -25,7 +25,7 @@ splitter = RecursiveCharacterTextSplitter(
     chunk_size=500,  # Smaller chunks
     chunk_overlap=100,  # Smaller overlap
     length_function=len,
-    separators=["\n\n", "\n", " ", ""]
+    separators=["\n\n", "\n", " ", ""],
 )
 
 chunks = splitter.create_documents([transcript])
@@ -49,7 +49,7 @@ retriever = vector_store.as_retriever(search_type="similarity", search_kwargs={"
 result = retriever.invoke("What is deepmind")
 # print(result)
 
-llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.1, max_tokens=500 )
+llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.1, max_tokens=500)
 prompt = PromptTemplate(
     template="""You are a helpful assistant. Answer only from the provided
     transcript context. if the context is insufficient, just say you don't 
@@ -68,15 +68,15 @@ retrieved_docs = retriever.invoke(question)
 def format_docs(retrieved_docs):
     if not retrieved_docs:
         return "No relevant context found."
-    
+
     # Sort by relevance if score is available
     context_texts = []
     for doc in retrieved_docs:
-        if hasattr(doc, 'metadata') and 'score' in doc.metadata:
-            context_texts.append((doc.page_content, doc.metadata['score']))
+        if hasattr(doc, "metadata") and "score" in doc.metadata:
+            context_texts.append((doc.page_content, doc.metadata["score"]))
         else:
             context_texts.append((doc.page_content, 0))
-    
+
     # Sort by score and join
     context_texts.sort(key=lambda x: x[1], reverse=True)
     return "\n\n".join([text for text, _ in context_texts])

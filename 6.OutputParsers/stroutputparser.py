@@ -28,6 +28,6 @@ prompt1 = template1.format(topic="Artificial Intelligence")
 result1 = model.invoke(prompt1)
 print(result1.content)
 
-prompt2 = template2.invoke({'text': result1.content})
+prompt2 = template2.invoke({"text": result1.content})
 result2 = model.invoke(prompt2)
 print(result2.content)

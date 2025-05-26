@@ -2,6 +2,7 @@ from langchain_core.tools import BaseTool
 from pydantic import BaseModel, Field
 from typing import Type
 
+
 class MultiplyInput(BaseModel):
     a: int = Field(required=True, description="First number to multiply")
     b: int = Field(required=True, description="Second number to multiply")
@@ -14,6 +15,7 @@ class MultiplyTool(BaseTool):
 
     def _run(self, a: int, b: int) -> int:
         return a * b
+
 
 multiply_tool = MultiplyTool()
 

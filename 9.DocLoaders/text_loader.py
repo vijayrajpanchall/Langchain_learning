@@ -8,7 +8,7 @@ model = ChatOpenAI()
 
 prompt = PromptTemplate(
     template="Write a summary of the following poem \n  {poem}",
-    input_variables=['poem'],
+    input_variables=["poem"],
 )
 
 parser = StrOutputParser()

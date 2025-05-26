@@ -11,11 +11,7 @@ You’ve likely interacted with large language models (LLMs), like the ones behi
 In an enterprise setting, one of the most popular ways to create an LLM-powered chatbot is through retrieval-augmented generation (RAG). When you design a RAG system, you use a retrieval model to retrieve relevant information, usually from a database or corpus, and provide this retrieved information to an LLM to generate contextually relevant responses.
 """
 
-splitter = CharacterTextSplitter(
-    chunk_size=100,
-    chunk_overlap=0,  
-    separator=""
-)
+splitter = CharacterTextSplitter(chunk_size=100, chunk_overlap=0, separator="")
 
 result = splitter.split_documents(docs)
 print("Result: ", result[0].page_content)

@@ -21,25 +21,27 @@ model2 = ChatHuggingFace(llm=llm2)
 
 prompt1 = PromptTemplate(
     template="Generate short and simple notes from the following text \n {text}",
-    input_variables=['text'],
+    input_variables=["text"],
 )
 
 prompt2 = PromptTemplate(
     template="Generate 5 short questions answers from the following text \n {text}",
-    input_variables=['text'],
+    input_variables=["text"],
 )
 
 prompt3 = PromptTemplate(
     template="Merge the provided notes and quiz into a single document \n {notes} \n {quiz}",
-    input_variables=['notes', 'quiz'],
+    input_variables=["notes", "quiz"],
 )
 
 parser = StrOutputParser()
 
-parallel_chain = RunnableParallel({
-    "notes": prompt1 | model1 | parser,
-    "quiz": prompt2 | model2 | parser,
-})
+parallel_chain = RunnableParallel(
+    {
+        "notes": prompt1 | model1 | parser,
+        "quiz": prompt2 | model2 | parser,
+    }
+)
 
 merge_chain = prompt3 | model1 | parser
 

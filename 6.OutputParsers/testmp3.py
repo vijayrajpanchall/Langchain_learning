@@ -11,11 +11,13 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 
-model = ChatOpenAI(model="gpt-4o") 
+model = ChatOpenAI(model="gpt-4o")
 parser = StrOutputParser()
 
 
-prompt = PromptTemplate.from_template("Write a detailed 50 words report on in hindi: {topic}")
+prompt = PromptTemplate.from_template(
+    "Write a detailed 50 words report on in hindi: {topic}"
+)
 
 
 chain = prompt | model | parser

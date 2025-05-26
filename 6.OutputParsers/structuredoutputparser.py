@@ -23,7 +23,7 @@ parser = StructuredOutputParser.from_response_schemas(schema)
 template = PromptTemplate(
     template="Give me 3 facts about the topic {topic} \n  {format_instructions}",
     input_variables=["topic"],
-    partial_variables={'format_instructions': parser.get_format_instructions()},
+    partial_variables={"format_instructions": parser.get_format_instructions()},
 )
 
 # prompt = template.invoke({"topic": "Black holes"})

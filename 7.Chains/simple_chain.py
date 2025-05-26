@@ -7,7 +7,7 @@ load_dotenv()
 
 prompt = PromptTemplate(
     template="Generate 5 intersting facts about the {topic}",
-    input_variables=['topic'],
+    input_variables=["topic"],
 )
 
 model = ChatOpenAI()
@@ -18,4 +18,3 @@ chain = prompt | model | parser
 
 result = chain.invoke({"topic": "Python"})
 print("Result: ", result)
-

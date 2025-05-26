@@ -8,21 +8,19 @@ load_dotenv()
 
 prompt1 = PromptTemplate(
     template="Write a joke about {topic}",
-    input_variables=['topic'],
+    input_variables=["topic"],
 )
 
 prompt2 = PromptTemplate(
     template="Explain the following joke - {text}",
-    input_variables=['text'],
+    input_variables=["text"],
 )
 
 model = ChatOpenAI()
 
 parser = StrOutputParser()
 
-chain = RunnableSequence(
-    prompt1 | model | parser | prompt2 | model | parser
-)
+chain = RunnableSequence(prompt1 | model | parser | prompt2 | model | parser)
 
 result = chain.invoke({"topic": "AI"})
 print("Result: ", result)

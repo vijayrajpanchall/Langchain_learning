@@ -8,7 +8,7 @@ loader = PyPDFLoader("Files/book.pdf")
 
 docs = loader.load()
 
-print(docs[0].metadata) 
+print(docs[0].metadata)
 print(len(docs))
 
 # model = ChatOpenAI()
@@ -19,8 +19,6 @@ print(len(docs))
 # )
 
 # parser = StrOutputParser()
-
-
 
 
 # # print(type(docs))

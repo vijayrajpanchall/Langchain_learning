@@ -8,12 +8,12 @@ load_dotenv()
 
 prompt1 = PromptTemplate(
     template="Generate a detailed report on {topic}",
-    input_variables=['topic'],
+    input_variables=["topic"],
 )
 
 prompt2 = PromptTemplate(
     template="Generate a 5 pointer summery from the following text {text}",
-    input_variables=['text'],
+    input_variables=["text"],
 )
 
 llm = HuggingFaceEndpoint(
@@ -31,4 +31,4 @@ result = chain.invoke({"topic": "Unemployment in India"})
 
 print("Result: ", result)
 
-chain.get_graph().print_ascii() 
+chain.get_graph().print_ascii()

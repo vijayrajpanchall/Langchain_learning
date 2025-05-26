@@ -8,5 +8,5 @@ loader = CSVLoader("Files/employees.csv", encoding="utf-8")
 
 docs = loader.load()
 
-print(docs[0]) 
+print(docs[0])
 print(len(docs))

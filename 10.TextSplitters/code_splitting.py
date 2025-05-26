@@ -22,7 +22,7 @@ Let us create a method in the Person class:
 splitter = RecursiveCharacterTextSplitter.from_language(
     language=Language.PYTHON,
     chunk_size=200,
-    chunk_overlap=0,  
+    chunk_overlap=0,
 )
 
 result = splitter.split_text(text)

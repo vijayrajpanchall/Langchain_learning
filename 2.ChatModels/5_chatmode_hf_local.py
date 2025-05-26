@@ -11,21 +11,14 @@ print(f"Token value: {os.environ.get('HUGGINGFACEHUB_API_TOKEN', 'Not found')[:5
 
 # Load model components directly
 tokenizer = AutoTokenizer.from_pretrained(
-    "gpt2", 
-    token=os.environ.get("HUGGINGFACEHUB_API_TOKEN")
+    "gpt2", token=os.environ.get("HUGGINGFACEHUB_API_TOKEN")
 )
 model = AutoModelForCausalLM.from_pretrained(
-    "gpt2", 
-    token=os.environ.get("HUGGINGFACEHUB_API_TOKEN")
+    "gpt2", token=os.environ.get("HUGGINGFACEHUB_API_TOKEN")
 )
 
 # Create the pipeline directly
-pipe = pipeline(
-    "text-generation",
-    model=model,
-    tokenizer=tokenizer,
-    max_new_tokens=10
-)
+pipe = pipeline("text-generation", model=model, tokenizer=tokenizer, max_new_tokens=10)
 
 # Use the pipeline with LangChain
 llm = HuggingFacePipeline(pipeline=pipe)

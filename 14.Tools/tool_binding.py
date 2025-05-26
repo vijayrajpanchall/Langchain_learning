@@ -10,6 +10,7 @@ def multiply(a: int, b: int) -> int:
     """Multiply two numbers."""
     return a * b
 
+
 # tool binding
 llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
 

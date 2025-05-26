@@ -15,7 +15,7 @@ llm = ChatOpenAI()
 llm.invoke("hi")
 
 # Pull the ReAct prompt from the hub
-prompt = hub.pull("hwchase17/react")   # ReAct = Reasining + action
+prompt = hub.pull("hwchase17/react")  # ReAct = Reasining + action
 
 # step 3: Create the ReAct agent manually with the pulled prompt
 agent = create_react_agent(
@@ -35,4 +35,4 @@ agent_executor = AgentExecutor(
 # Step 5: Invoke the agent
 response = agent_executor.invoke({"input": "3 ways to reach goa from jaipur"})
 print(response)
-print(response['output'])
+print(response["output"])

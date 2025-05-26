@@ -7,7 +7,9 @@ docs = [
     Document(page_content="LangChain is used to build LLM based applications."),
     Document(page_content="Chroma is used to store and search document embeddings."),
     Document(page_content="Embeddings are vector representations of text."),
-    Document(page_content="MMR helps you get diverse results when doing similarity search."),
+    Document(
+        page_content="MMR helps you get diverse results when doing similarity search."
+    ),
     Document(page_content="LangChain supports Chroma, FAISS, Pinecone, and more."),
 ]
 

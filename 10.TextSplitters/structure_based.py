@@ -13,7 +13,7 @@ In an enterprise setting, one of the most popular ways to create an LLM-powered 
 
 splitter = RecursiveCharacterTextSplitter(
     chunk_size=10,
-    chunk_overlap=0,  
+    chunk_overlap=0,
 )
 
 result = splitter.split_documents(docs)
